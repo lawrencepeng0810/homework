@@ -8,6 +8,7 @@ val tickets = Tickets(1000, 2000);
 
 class Tickets(var OneWayPrice: Int, var RoundTripPrice: Int) {
     init {
+        // RoundTripPrice 9折
             this.RoundTripPrice = (this.RoundTripPrice * 0.9F).toInt();
     }
 
