@@ -9,9 +9,26 @@ public class BuyTickets {
         Tester ticket = new Tester(1000, 2000);
 
         System.out.println("Please enter number of tickets: ");
-        int Total = scanner.nextInt();
+        int TotalQty = scanner.nextInt();
+
         System.out.println("How many round-trip tickets: ");
-        int RoundTrip = scanner.nextInt();
-        ticket.PrintResult(Total,RoundTrip);
+        int RoundTripQty = scanner.nextInt();
+
+        if (TotalQty <= RoundTripQty ) {
+            System.out.println("TotalQty Can't less Than RoundTripQty");
+            return;
+        }
+
+        if (TotalQty <= 0) {
+            System.out.println("TotalQty Input Can't : 0");
+            return;
+        }
+
+        if (RoundTripQty <= 0) {
+            System.out.println("RoundTripQty Can't Input : 0");
+            return;
+        }
+
+        ticket.PrintResult(TotalQty,RoundTripQty);
     }
 }
