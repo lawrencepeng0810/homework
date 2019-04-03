@@ -6,7 +6,7 @@ public class buyTickets {
     public static void main(String[] args) {
             int totalQty = 0;
             Scanner scanner = new Scanner(System.in);
-
+            //
             while (totalQty != -1) {
                 Tester ticket = new Tester(1000, 2000);
 
