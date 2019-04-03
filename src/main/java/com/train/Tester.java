@@ -25,5 +25,6 @@ public class Tester {
         System.out.println(
                 "Total tickets: "+ this.TotalQty + "\nRound-trip: " + RoundTripQty +
                 "\nTotal:" + this.TotalPrice);
+        System.out.println();
     }
 }
