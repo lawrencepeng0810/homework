@@ -1,55 +1,55 @@
 package com.train
 
 import java.util.*
-import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
-val tickets = Tickets(1000, 2000);
+val tickets = tickets(1000, 2000);
 
     val scanner = Scanner(System.`in`);
+    var total = 0;
+    while (total != -1) {
+        println("Please enter number of tickets: ");
+        total = scanner.nextInt();
 
-    println("Please enter number of tickets: ");
-    val Total = scanner.nextInt();
+        if (total == -1) { break; }
 
-    println("How many round-trip tickets: ");
-    val RoundTrip = scanner.nextInt();
+        println("How many round-trip tickets: ");
+        val roundTrip = scanner.nextInt();
 
-    tickets.PrintResult(Total , RoundTrip);
+        tickets.printResult(total, roundTrip);
+    }
 }
 
 
-class Tickets(var OneWayPrice: Int, var RoundTripPrice: Int) {
+class tickets(var oneWayPrice: Int, var roundTripPrice: Int) {
     init {
-        // RoundTripPrice 9折
-            this.RoundTripPrice = (this.RoundTripPrice * 0.9F).toInt();
+        // roundTripPrice 9折
+        this.roundTripPrice = (this.roundTripPrice * 0.9F).toInt();
     }
 
-    fun PrintResult(TotalQty: Int, RoundTripQty: Int) {
-        if (TotalQty <= RoundTripQty ) {
+    fun printResult(totalQty: Int, roundTripQty: Int) {
+        if (totalQty <= roundTripQty ) {
             println("TotalQty Can't less Than RoundTripQty")
-            return;
-        }
+            return;        }
 
-        if (TotalQty <= 0) {
+        if (totalQty <= 0) {
             println("TotalQty Can't Input : 0")
             return;
         }
-
-        if (RoundTripQty <= 0) {
+        if (roundTripQty <= 0) {
             println("RoundTripQty Can't Input : 0")
             return;
         }
-
-        if (TotalQty > 0 && RoundTripQty > 0) {
-            val onewayprice: Int = this.OneWayPrice;
-            val roundtriprice: Int = this.RoundTripPrice;
-            val totalprice: Int = (onewayprice * (TotalQty - RoundTripQty) + (roundtriprice * RoundTripQty));
+        if (totalQty > 0 && roundTripQty > 0) {
+            val onewayprice: Int = this.oneWayPrice;
+            val roundtriprice: Int = this.roundTripPrice;
+            val totalprice: Int = (onewayprice * (totalQty - roundTripQty) + (roundtriprice * roundTripQty));
 
             println(
-                "Total Tickets: $TotalQty \n" +
-                "Round-trip: $RoundTripQty \n" +
-                "Total: $totalprice"
+                "Total Tickets: $totalQty \nRound-trip: $roundTripQty \nTotal: $totalprice"
             );
+
+            println();
         }
     }
 }
