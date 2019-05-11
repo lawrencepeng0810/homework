@@ -8,7 +8,7 @@ public class buyTickets {
             Scanner scanner = new Scanner(System.in);
             //
             while (totalQty != -1) {
-                Tester ticket = new Tester(1000, 2000);
+                TicketsTester ticket = new TicketsTester(1000, 2000);
 
                 System.out.println("Please enter number of tickets: ");
                 totalQty = scanner.nextInt();

@@ -41,12 +41,12 @@ class tickets(var oneWayPrice: Int, var roundTripPrice: Int) {
             return;
         }
         if (totalQty > 0 && roundTripQty > 0) {
-            val onewayprice: Int = this.oneWayPrice;
-            val roundtriprice: Int = this.roundTripPrice;
-            val totalprice: Int = (onewayprice * (totalQty - roundTripQty) + (roundtriprice * roundTripQty));
+            val oneWayPrice: Int = this.oneWayPrice;
+            val roundTripPrice: Int = this.roundTripPrice;
+            val totalPrice: Int = (oneWayPrice * (totalQty - roundTripQty) + (roundTripPrice * roundTripQty));
 
             println(
-                "Total Tickets: $totalQty \nRound-trip: $roundTripQty \nTotal: $totalprice"
+                "Total Tickets: $totalQty \nRound-trip: $roundTripQty \nTotal: $totalPrice"
             );
 
             println();
